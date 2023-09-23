@@ -14,9 +14,19 @@ intents.presences = False
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
+# 起動時に実行されるイベントハンドラ
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user.name}')
+
+# メッセージ受信時に実行されるイベントハンドラ
+@bot.event
+async def on_message(message):
+    if message.author.bot:
+        return
+    # 「要約して」と投稿したら"summarize_util"を実行
+    if message.content is "要約して":
+        pass
 
 # リアクション追加時に実行されるイベントハンドラ
 @bot.event
