@@ -1,0 +1,27 @@
+{
+    "name": "project-name",
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Args": [
+            "--ignore=E402",
+            "--max-line-length",
+            "120"
+        ],
+        "python.formatting.provider": "autopep8",
+        "python.formatting.autopep8Args": [
+            "--ignore",
+            "E402",
+            "--max-line-length",
+            "120"
+        ]
+    },
+    "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+    ],
+    "postCreateCommand": "pip install -r requirements.txt"
+}
