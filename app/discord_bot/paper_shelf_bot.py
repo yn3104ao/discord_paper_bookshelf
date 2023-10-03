@@ -39,5 +39,8 @@ async def on_reaction_add(reaction, user):
 async def hello(ctx):
     await ctx.send("Hello, world!")
 
+""" async def post():
+    await bot.get_channel() """
+
 # Botトークンを貼り付けてください
 bot.run(os.environ.get("DISCORD_API_TOKEN"))
